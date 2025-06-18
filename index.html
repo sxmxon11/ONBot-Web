@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ONBot Startseite</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: #eee;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .loading-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 9999;
+      opacity: 1; transition: opacity 1s ease;
+    }
+
+    .loading-overlay.hidden {
+      opacity: 0; pointer-events: none;
+    }
+
+    .loading-container {
+      font-size: 60px;
+      font-family: monospace;
+      color: #fff;
+    }
+
+    #braille-symbol::after {
+      content: '⠋';
+      animation: brailleAnimation 0.7s infinite;
+    }
+
+    @keyframes brailleAnimation {
+      0% { content: '⠋'; }
+      14% { content: '⠙'; }
+      28% { content: '⠹'; }
+      42% { content: '⠸'; }
+      57% { content: '⠼'; }
+      71% { content: '⠴'; }
+      85% { content: '⠦'; }
+      100% { content: '⠧'; }
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255 255 255 / 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 10px 30px;
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 0 20px rgba(255 255 255 / 0.15);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 6px #fff;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 10px;
+       text-shadow: 0 0 10px #aaa;
+    font-weight: bold;
+    }
+	
+	  footer {
+    background: rgba(255 255 255 / 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    text-align: center;
+    color: #bbb;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+  
+  </style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loading">
+  <div class="loading-container">
+    <div id="braille-symbol"></div>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index2.html">Features</a>
+  <a href="index3.html">Kontakt</a>
+</nav>
+
+
+
+<section class="hero" id="home">
+  <h1>Home</h1>
+</section>
+
+
+<script>
+  window.addEventListener('load', () => {
+    const loading = document.getElementById('loading');
+    loading.classList.add('hidden');
+    setTimeout(() => { loading.style.display = 'none'; }, 1000);
+  });
+</script>
+
+<footer>
+  &copy; 2025 ONBot - Alle Rechte vorbehalten.
+</footer>
+
+</body>
+</html>
+
