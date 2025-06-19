@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kontakt</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,7 +13,7 @@
       user-select: none;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #1e1e1e;
@@ -67,22 +68,29 @@
       text-shadow: 0 0 12px #fff;
       margin-bottom: 80px;
       font-weight: bold;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .whatsapp {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      background-color: #25D366;
+      color: #fff;
       text-decoration: none;
-      color: #189d0e;
-      font-size: 1.8rem;
-      margin-top: 40px;
+      padding: 12px 20px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 40px;
+      transition: background-color 0.3s ease;
     }
 
-    .whatsapp img {
-      height: 40px;
-      width: 40px;
-      filter: none;
+    .whatsapp:hover {
+      background-color: #1ebc59;
+    }
+
+    .whatsapp .material-icons {
+      font-size: 1.8rem;
     }
 
     footer {
@@ -93,6 +101,11 @@
       color: #bbb;
       font-size: 0.9rem;
       margin-top: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -105,9 +118,9 @@
 </nav>
 
 <main>
-  <h1>Kontakt</h1>
+  <h1>Kontaktiere uns</h1>
   <a class="whatsapp" href="https://wa.me/4915739382633" target="_blank" rel="noopener">
-    <img src="https://medi-suedwest.de/wp-content/uploads/2018/10/whatsapp-official-logo-png-download.png" alt="WhatsApp Logo">
+    <span class="material-icons">chat</span>
     WhatsApp
   </a>
 </main>
