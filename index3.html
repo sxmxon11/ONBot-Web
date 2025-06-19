@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kontakt</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -75,28 +74,26 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: rgba(255 255 255 / 0.06);
-      color: #eee;
+      background-color: #25D366;
+      color: #fff;
       text-decoration: none;
-      padding: 16px 30px;
+      padding: 12px 24px;
       font-size: 1.3rem;
       font-weight: 600;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255 255 255 / 0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+      border-radius: 40px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(37, 211, 102, 0.5);
     }
 
-    .whatsapp .material-icons {
-      font-size: 1.8rem;
-      color: #eee;
-      text-shadow: 0 0 5px #fff;
+    .whatsapp:hover {
+      background-color: #1ebc59;
+      box-shadow: 0 6px 12px rgba(30, 188, 89, 0.6);
     }
 
-    .whatsapp:hover,
-    .whatsapp:focus {
-      color: #fff;
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(255 255 255 / 0.3);
+    .whatsapp img {
+      width: 24px;
+      height: 24px;
+      filter: drop-shadow(0 0 2px #000);
     }
 
     footer {
@@ -125,8 +122,8 @@
 
 <main>
   <h1>Kontakt</h1>
-  <a class="whatsapp" href="https://wa.me/4915739382633" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
-    <span class="material-icons">chat</span>
+  <a class="whatsapp" href="https://wa.me/4915739382633" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/m_outlined/200/FFFFFF/whatsapp--v5.png" alt="WhatsApp Icon" />
     WhatsApp
   </a>
 </main>
