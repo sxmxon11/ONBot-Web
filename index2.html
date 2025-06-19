@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Features</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
   * {
     margin: 0;
@@ -12,7 +13,7 @@
     user-select: none;
   }
 
-  body, html {
+  html, body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #1e1e1e;
@@ -53,36 +54,63 @@
 
   main {
     flex-grow: 1;
+    padding: 160px 20px 80px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    padding: 160px 20px 60px;
-    gap: 40px;
+    gap: 60px;
     text-align: center;
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #fff;
-    text-shadow: 0 0 10px #aaa;
+    text-shadow: 0 0 15px #aaa;
     font-weight: bold;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
   }
 
   .feature {
-    font-size: 1.5rem;
-    padding: 20px 30px;
+    background: rgba(255 255 255 / 0.06);
     border-radius: 20px;
-    background-color: rgba(255 255 255 / 0.05);
-    transition: all 0.3s ease;
-    max-width: 600px;
-    width: 100%;
+    padding: 30px 25px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .feature .material-icons {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px #fff;
   }
 
   .feature:hover {
-    background-color: rgba(255 255 255 / 0.1);
-    box-shadow: 0 0 20px rgba(255 255 255 / 0.3);
-    text-shadow: 0 0 6px #fff;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .feature-text {
+    font-size: 1rem;
+    color: #ccc;
   }
 
   footer {
@@ -93,6 +121,22 @@
     color: #bbb;
     font-size: 0.9rem;
     margin-top: auto;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
   }
 </style>
 </head>
@@ -106,14 +150,44 @@
 
 <main>
   <h1>Features</h1>
-  <div class="feature">[Platzhalter]</div>
-  <div class="feature">[Platzhalter]</div>
-  <div class="feature">[Platzhalter]</div>
+  <section class="features">
+    <div class="feature" style="animation-delay: 0.2s;">
+      <span class="material-icons">bolt</span>
+      <div class="feature-title">Blitzschnell</div>
+      <div class="feature-text">Ultraschnelle Ladezeiten dank moderner Technologie.</div>
+    </div>
+    <div class="feature" style="animation-delay: 0.4s;">
+      <span class="material-icons">security</span>
+      <div class="feature-title">Sicher</div>
+      <div class="feature-text">Top-Sicherheit für deine Daten durch neueste Standards.</div>
+    </div>
+    <div class="feature" style="animation-delay: 0.6s;">
+      <span class="material-icons">emoji_objects</span>
+      <div class="feature-title">Innovativ</div>
+      <div class="feature-text">Stetige Weiterentwicklung mit kreativen Funktionen.</div>
+    </div>
+  </section>
 </main>
 
 <footer>
   &copy; 2025 ONBot - Alle Rechte vorbehalten.
 </footer>
+
+<script>
+  const features = document.querySelectorAll('.feature');
+  const options = { threshold: 0.2 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, options);
+
+  features.forEach(f => observer.observe(f));
+</script>
 
 </body>
 </html>
