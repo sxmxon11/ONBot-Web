@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kontakt</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -53,47 +54,48 @@
 
     main {
       flex-grow: 1;
+      padding: 160px 20px 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: 160px 20px 60px;
+      gap: 60px;
       text-align: center;
     }
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       color: #fff;
-      text-shadow: 0 0 12px #fff;
-      margin-bottom: 80px;
+      text-shadow: 0 0 15px #aaa;
       font-weight: bold;
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeIn 1s ease-out;
     }
 
     .whatsapp {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background-color: #25D366;
-      color: #fff;
+      background: rgba(255 255 255 / 0.06);
+      color: #eee;
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 16px 30px;
       font-size: 1.3rem;
       font-weight: 600;
-      border-radius: 40px;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(37, 211, 102, 0.5);
-    }
-
-    .whatsapp:hover {
-      background-color: #1ebc59;
-      box-shadow: 0 6px 12px rgba(30, 188, 89, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255 255 255 / 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
     }
 
     .whatsapp img {
       width: 24px;
       height: 24px;
-      filter: drop-shadow(0 0 2px #000);
+      filter: drop-shadow(0 0 5px #fff);
+    }
+
+    .whatsapp:hover,
+    .whatsapp:focus {
+      color: #fff;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255 255 255 / 0.3);
     }
 
     footer {
@@ -107,8 +109,8 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0 }
+      to { opacity: 1 }
     }
   </style>
 </head>
@@ -122,10 +124,10 @@
 
 <main>
   <h1>Kontakt</h1>
-<a class="whatsapp" href="https://wa.me/4915739382633" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
-  <img src="https://img.icons8.com/m_outlined/200/FFFFFF/whatsapp--v5.png" alt="WhatsApp Icon" style="width: 24px; height: 24px;" />
-  WhatsApp
-</a>
+  <a class="whatsapp" href="https://wa.me/4915739382633" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
+    <img src="https://img.icons8.com/m_outlined/200/FFFFFF/whatsapp--v5.png" alt="WhatsApp Icon" />
+    WhatsApp
+  </a>
 </main>
 
 <footer>
